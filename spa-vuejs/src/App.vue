@@ -1,17 +1,13 @@
 <template>
   <div id="app" style="width:700px; margin:auto; padding-top:50px;">
-    <nav >
-      <router-link to="/"
-      class="link"
-      active-class="link--active"
-      exact>Home</router-link>
-      <router-link to="/users"
-      class="link"
-      active-class="link--active"
-      >Users</router-link>
+    
+    <router-view name="header"></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
 
-    </nav>
-    <router-view></router-view>
+
+
   </div>
 </template>
 
@@ -22,6 +18,15 @@
   }
   .link--active{
     font-size:20px;
+  }
+
+  .fade-enter,
+  .fade-leave-to{
+    opacity: 0;
+  }
+  .fade-enter-active,
+  .fade-leave-active{
+    transition: opacity 0.5s;
   }
 
 </style>
