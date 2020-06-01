@@ -4,10 +4,7 @@ import router from "./router"
 
 
 Vue.config.productionTip = false
-router.beforeEach((to, from, next)=>{
-  console.log('global-beforeeach')
-  next();
-})
+
 
 new Vue({
   router,
